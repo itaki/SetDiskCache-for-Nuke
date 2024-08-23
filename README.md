@@ -10,12 +10,17 @@ A class to manage and set cache directories for applications like Nuke, prioriti
 - **Cross-Platform Support**: Supports OS-specific handling for macOS, Linux, and Windows (currently only macOS is fully implemented).
 
 ## Attributes
+
+**Receives**
+
 - **preferred_volumes (List[str])**: List of preferred volume names to check. It will default to the first available volume that passes the checks, so list them in order of preference.
   - Example: `PREFERRED_CACHE_DISKS = ['ReallyFastM2', 'LocalSSD', 'SlowRAID']`
   
 - **cache_dir (str)**: Relative path for the cache directory on the drive. It will be created if it doesn't exist.
   - Example: `CACHE_DIR = 'NukeCache'` or `CACHE_DIR = '.NukeCache'` or `CACHE_DIR = '_caches/nuke'`
-  
+
+**Returns**  
+
 - **cache_path (Optional[str])**: The resolved cache path after checks.
 
 ## Installation
@@ -34,7 +39,7 @@ set_cache_disk.DiskCache(PREFERRED_CACHE_DISKS, CACHE_DIR)  # Run the script
 ```
 
 ## Notes
-This script has been tested extensively on macOS.
+This script has been tested extensively on macOS, but has not been sufficantly tested on Linux and Windows.
 
-It has not been sufficantly tested on Linux and Windows, but may work. Please feel free to contribute! 
+Please feel free to contribute! 
 Start a pull request here: https://github.com/itaki/SetDiskCache-for-Nuke
